@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+
+.basket{
+    background: rgba(51, 51, 51, 0.568);
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    display: grid;
+    align-items: center;
+}
+
+.basketDiv{
+    background: #ddd;
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeIcon{position: absolute;
+    right: 50px;
+    top:30px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.emptySection{height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center}
+.emptyText{font-size: 1rem;}
+.emptyIcon{font-size: 5rem;}
+
+.itemsSec{
+    /* background: chartreuse; */
+    text-align: center;
+    height: 80%;
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.basketBottom{
+    /* background: chocolate; */
+    padding-bottom: 5px;
+    height: 20%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.itemsDiv{display: flex; justify-content: center; align-items: center; margin: 10px auto; 
+    /* border:2px solid black;*/ border-radius:10px;
+    background: #fff;
+    box-shadow: 0 10px 14px rgba(0,0,0, 0.1); 
+
+}
+
+.itemName, .itemPrice, .deleteIconSec{width: calc(100% / 3); font-weight: 600;}
+.itemName{color: rgb(48, 138, 168)}
+.itemPrice{color:rgb(61,61,61)}
+
+
+.deleteIcon{cursor: pointer; color: rgb(221, 66, 66); font-size: 1.2rem;}
+.deleteIcon:hover{transform: scale(1.1);}
+
+
+.price{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.payBtn{
+    cursor: pointer;
+    padding: .7rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: rgb(33, 92, 67); color: #fff;
+}
+
+.payBtn:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px){
+    .basketDiv{width:95%}
+    .closeIcon{position: absolute;
+        right: 30px;
+        top:10px;
+        font-size: 2rem;
+    }
+    
+}

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.header{
+    /* background: blue; */
+    /* padding: 1px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* position: fixed; */
+}
+
+
+.headerSticky{position: fixed;
+    top: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 14px rgba(0,0,0, 0.1); 
+    border-radius: 20px;
+    z-index: 800;
+    width: 70vw;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.logoSec{
+    display: flex;
+}
+
+.logoText{
+    font-size: 2rem;
+    font-family: 'Pacifico', cursive;
+}
+
+
+.iconSection{
+    position: relative;
+    width: 50px;
+    cursor: pointer;
+}
+
+.icon{
+    font-size: 1.4rem;
+}
+
+.badge{
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    height: 27px;
+    width: 27px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+
+@media screen and (max-width: 768px){
+    .headerSticky{width:95vw}
+}

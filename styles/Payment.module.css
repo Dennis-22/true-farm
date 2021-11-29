@@ -1,0 +1,71 @@
+.body{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.text{
+    font-size: 1.6rem;
+    color: rgba(51, 51, 51, 0.904);
+}
+
+#secondText{font-size: 1rem; 
+    padding: 1rem; 
+    border-radius: 5px;
+    background: rgba(221, 221, 221, 0.137);
+    font-weight: 300;
+}
+
+.textPrimary{border-left: 20px solid rgb(130, 205, 229); color: rgb(130, 205, 229);}
+.textSuccess{border-left: 20px solid rgb(72, 214, 155); color: rgb(72, 214, 155);}
+.textError{border-left: 20px solid rgba(255, 0, 0, 0.322); color: rgba(255, 0, 0, 0.322);}
+
+
+.form{
+    width: 50%;
+    padding: 20px;
+    background: rgba(221, 221, 221, 0.26);
+    border-radius: 10px;
+}
+
+.inputSec{
+    margin: 23px auto;
+}
+
+.label{
+    margin-bottom: 25px;
+}
+
+.input{
+    width: 100%;
+    padding: .5rem .6rem;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: none;
+}
+
+.payBtn{
+    padding: .5rem .6rem;
+    width: 100%;
+    margin-top: 2rem;
+    background: rgb(69, 97, 255);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payBtn:hover{background: rgb(60, 84, 221);}
+
+/* .paidIcon{
+    font-size: 2rem;
+    color: rgb(37, 76, 148);
+} */
+
+
+@media screen and (max-width: 768px) {
+    .form{width:95%}
+    .text{font-size: 1.2rem}
+}

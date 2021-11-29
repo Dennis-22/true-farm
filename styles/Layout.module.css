@@ -1,0 +1,17 @@
+.layout{
+    /* padding: .2rem; */
+    min-height: 100vh;
+    padding: .1px;
+    background: rgba(221, 221, 221, 0.116);
+}
+  
+
+.container{
+    width:70%;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 768px){
+    .container{width:95%}
+}
