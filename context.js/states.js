@@ -19,7 +19,7 @@ import tomatoes from '../images/tomatoes.jpg'
 import almond from '../images/almond.jpg'
 import greenPea from '../images/green-pea.jpg'
 import spinach from '../images/spinach.jpg'
-
+ 
 
 
 
@@ -32,7 +32,15 @@ const Data = [
         image: banana,
         price:5
     },
-        {
+
+    {
+        id:'3', 
+        category:'fruit',
+        name:'Pineapple',
+        image: pineapple,
+        price:15
+    }, 
+    {
         id:'5', 
         category:'fruit',
         name:'Pawpaw',
@@ -52,13 +60,6 @@ const Data = [
         name:'Orange',
         image: orange,
         price:7
-    }, 
-    {
-        id:'3', 
-        category:'fruit',
-        name:'Pineapple',
-        image: pineapple,
-        price:15
     }, 
         {
         id:'9', 

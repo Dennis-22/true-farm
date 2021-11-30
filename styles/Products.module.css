@@ -82,8 +82,9 @@
 }
 
 .paginationContainer{
+    width: 100%;
     margin-top: 2.5rem;
-    width: 80%;
+    margin-bottom: 1rem;
     height:40px;
     list-style: none;
     display: flex;
@@ -92,7 +93,7 @@
 }
 
 .paginationContainer a{padding: 10px; 
-    margin:10px;
+    margin:7px;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -185,7 +186,8 @@
     .filter{flex-wrap: wrap;}
     #filterSec{margin: 10px;}
     .single{width: 80%;}
-    .scrollUp{right:10px}
+    .scrollUp{right:10px; top:83vh}
+    .paginationContainer{width:100%; justify-content: center; padding-left: 1rem;}
 }
 
 @media screen and (max-width: 950px){

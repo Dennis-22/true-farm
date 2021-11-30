@@ -8,6 +8,7 @@ body {
 
     transition: 100ms ease-in-out;
     font-family: 'Karla', sans-serif;
+    scroll-behavior: smooth;
 }
 
 a {

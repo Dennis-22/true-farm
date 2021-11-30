@@ -1,17 +1,22 @@
 import Link from 'next/link'
+// import style from 'next/css'
 import styles from '../styles/Home.module.css'
 
 import { BsFillBasketFill } from "react-icons/bs";
 
+// import p from '../images/background.jpg'
 
 import { Container } from '../components/Layout'
 import Header from '../components/Header'
+
+// const mainStyle = style({ background: 'url(/static/bg.png) no-repeat center center scroll' })
+
 
 export default function Home() {
   return (
     <div className={styles.body}>
       <div className={styles.hero}>
-        <Container>
+        {/* <Container> */}
          {/* <Header /> */}
          <section className={styles.heroSec}>
           <p className={styles.heroText}>
@@ -25,7 +30,7 @@ export default function Home() {
           </Link>
           
          </section>
-        </Container>
+        {/* </Container> */}
       </div>
     </div>  
   )

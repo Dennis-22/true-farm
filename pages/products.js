@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef, useCallback} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import Image from 'next/image'
 import ReactPaginate from 'react-paginate'
 import styles from '../styles/Products.module.css'
@@ -66,6 +66,10 @@ export default function Products(){
     }
 
     const search = ()=>{
+        if(!searchInput){
+            return null
+        }
+
         let word = searchInput.toLowerCase()
         let keyword = word.charAt(0).toUpperCase() + word.slice(1);
         dispatch({type:'filter_name', payload:{keyword:keyword}})
@@ -119,7 +123,7 @@ export default function Products(){
                         { displayProducts }
 
                         <ReactPaginate 
-                            previousLabel={"Previous"}
+                            previousLabel={"Prev"}
                             nextLabel={"Next"}
                             pageCount={pageCount}
                             onPageChange={changePage}
