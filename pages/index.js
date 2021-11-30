@@ -20,7 +20,7 @@ export default function Home() {
          {/* <Header /> */}
          <section className={styles.heroSec}>
           <p className={styles.heroText}>
-            Purchase your favorite fruits and vegetables right from the farmer&apos;s garden 
+            Purchase your favorite fruits and vegetables right from the farmer&apos;s garden.
           </p>
 
           <Link href='/products'>

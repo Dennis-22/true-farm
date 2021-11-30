@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .body{
-  background-image: url('../static/background.jpg');
+  /* background-image: url('../static/background.jpg');
   height: 100vh;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .hero{
-  background: rgba(51, 51, 51, 0.699);
+  /* background: rgba(51, 51, 51, 0.699); */
+  /* background-image: repeating-linear-gradient( rgb(52, 133, 88), rgb(55, 104, 15)); */
   width: 100%;
   height: 100vh;
   padding: 1px; 
@@ -35,10 +36,15 @@
 
 .heroText{
   font-size: 4rem;
-  color: white;
+  /* color: white; */
+
+  text-align: left;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 80px;
+  background: -webkit-linear-gradient(rgb(74, 133, 96), rgb(11, 78, 50));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .btn{
@@ -63,6 +69,6 @@
 
 
 @media screen and (max-width: 768px){
-  .heroSec{width: 95%;}
+  .heroSec{width: 95%; height: 50vh;}
   .heroText{font-size: 2rem; line-height: 50px;}
 }
