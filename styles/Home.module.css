@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .body{
-  /* background-image: url('../static/background.jpg');
+  background-image: url(../images/background.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
 
 .hero{
@@ -36,15 +36,15 @@
 
 .heroText{
   font-size: 4rem;
-  /* color: white; */
+  color: white;
 
   text-align: left;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   line-height: 80px;
-  background: -webkit-linear-gradient(rgb(74, 133, 96), rgb(11, 78, 50));
+  /* background: -webkit-linear-gradient(rgb(74, 133, 96), rgb(11, 78, 50));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .btn{

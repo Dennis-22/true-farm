@@ -105,7 +105,7 @@ export default function Products(){
                     <div className={styles.inputDiv}>
                         <BiSearchAlt />
                         <input className={styles.input} value={searchInput} onChange={(e)=>setSetInput(e.target.value)}
-                             onKeyPress={(e)=>{if(e.key === 'Enter'){search()}}}
+                           placeholder='Search an item' onKeyPress={(e)=>{if(e.key === 'Enter'){search()}}}
                         />
                     </div>
                     <button className={styles.btn} onClick={search}>Get</button>
