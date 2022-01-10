@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .body{
-  background-image: url('../images/background.jpg');
+  /* background-image: url('../images/background.jpg'); */
+  background: #fff;
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -9,7 +10,7 @@
 }
 
 .hero{
-  /* background: rgba(51, 51, 51, 0.699); */
+  background: rgba(51, 51, 51, 0.062);
   /* background-image: repeating-linear-gradient( rgb(52, 133, 88), rgb(55, 104, 15)); */
   width: 100%;
   height: 100vh;
@@ -36,15 +37,15 @@
 
 .heroText{
   font-size: 4rem;
-  color: white;
+  /* color: white; */
 
   text-align: left;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   line-height: 80px;
-  /* background: -webkit-linear-gradient(rgb(74, 133, 96), rgb(11, 78, 50));
+  background: -webkit-linear-gradient(rgb(74, 133, 96), rgb(11, 78, 50));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
 }
 
 .btn{
@@ -59,8 +60,9 @@
   align-items: center;
   transition: 300ms ease;
 
-  /* background: rgb(33, 92, 67);
-  color: #fff; */
+  background: rgb(33, 92, 67);
+  color: #fff;
+  
 }
 
 .btn:hover{transform: scale(1.1)}
