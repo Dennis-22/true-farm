@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .body{
-  background-image: url(../images/background.jpg);
+  background-image: url('../images/background.jpg');
   height: 100vh;
   background-position: center;
   background-size: cover;

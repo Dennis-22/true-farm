@@ -18,7 +18,7 @@
     font-weight: 300;
 }
 
-.textPrimary{border-left: 20px solid rgb(130, 205, 229); color: rgb(130, 205, 229);}
+.textPrimary{border-left: 20px solid rgb(44, 114, 138); color: rgb(44, 114, 138);}
 .textSuccess{border-left: 20px solid rgb(72, 214, 155); color: rgb(72, 214, 155);}
 .textError{border-left: 20px solid rgba(255, 0, 0, 0.322); color: rgba(255, 0, 0, 0.322);}
 
