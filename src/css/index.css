@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+:root{
+  --deep-green: rgb(33, 92, 67);
+  --deep-green2: rgb(33, 154, 2);
+  --light-green: rgb(72, 154, 2);
+  --grey: #ddd;
+  --grey2: rgba(221, 221, 221, 0.342);
+  --grey3: rgb(236, 236, 236);
+  --red: rgb(226, 52, 52);
+  --blue: rgba(0, 168, 235);
+  --blue2: #5070ffd0;
+  --blue-3: rgb(24, 119, 242);
+  --black-1: rgb(27, 27, 27);
+  --faint-text: rgba(61,61,61,0.8);
+  --faint-background: #d6d6d6;
+  --faint-background-2: #f0f0f0;
+  --faint-background-3: #e2e2e2;
+  --faint-background-4: #d0d0d0;
+  --faint-background-5: #f0f0f057;
+  --box-shadow-1: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12); 
+  --box-shadow-2: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --box-shadow-3: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  --box-shadow-4: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  --box-shadow-5: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; 
+  --box-shadow-6: 0px 20px 48px rgba(0,0,0,0.2);
+  --box-shadow-7: rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+    font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container{
+  margin-top: 120px;
+}

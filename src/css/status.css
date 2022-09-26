@@ -1,0 +1,34 @@
+.status{
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+}
+
+.status-img{
+    width: 100px;
+    height:100px
+}
+
+.status-icon{
+    color: rgb(250, 79, 79);
+    font-size: 2rem;
+}
+
+.status-text{
+    margin: 2rem 0;
+    color: var(--faint-text);
+}
+
+.status-btn{
+    width: 100%;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    background-color: var(--deep-green);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-1);
+    cursor: pointer;
+}

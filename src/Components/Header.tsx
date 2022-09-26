@@ -1,0 +1,164 @@
+import {useState, useEffect, useLayoutEffect} from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { motion, useAnimation } from 'framer-motion';
+import { FaShoppingCart } from "react-icons/fa";
+import { RiMenu2Fill } from "react-icons/ri";
+import '../css/header.css'
+import Logo from "./Logo"
+import {useGlobalContext} from '../context/context'
+
+interface Props{
+    setShowCart: React.Dispatch<React.SetStateAction<boolean>>
+    setOpenMobileDrawer : React.Dispatch<React.SetStateAction<boolean>>
+}
+
+interface HeaderComponentProps{
+    setShowCart: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+interface MobileNavDrawerProps{
+    setOpenMobileDrawer : React.Dispatch<React.SetStateAction<boolean>>
+}
+
+
+const Navs = [
+    {name:'Home', path:'/'},
+    {name:'Store', path:'/store'},
+    {name:'About', path:'/about'}
+]
+
+export default function Header({setShowCart, setOpenMobileDrawer}:Props){
+    const [deviceWidth, setDeviceWidth] = useState(window.innerWidth)
+
+    // update the device width on resize
+    useEffect(()=>{
+        window.addEventListener('resize', ()=>{
+            setDeviceWidth(window.innerWidth)
+        })
+    },[])
+
+    return <>
+        {deviceWidth > 768 ? <DesktopNav setShowCart={setShowCart}/> : 
+        <MobileNav setShowCart={setShowCart} setOpenMobileDrawer={setOpenMobileDrawer}/>}
+    </>
+}
+
+function DesktopNav({setShowCart}:HeaderComponentProps){
+    const location = useLocation()
+
+    return <nav className='desktop-nav-bar'>
+        <Logo />
+        <section className="desktop-nav-content">
+            {Navs.map((nav, index)=> <Link 
+                key={index}
+                className={location.pathname === nav.path ? 'link-active' : 'link'} 
+                to={nav.path}
+            >
+                {nav.name}                
+            </Link>)}
+        </section>
+        <CartBasket setShowCart={setShowCart}/>
+    </nav>
+}
+
+function MobileNav({setShowCart, setOpenMobileDrawer}:Props){
+    return <nav className='mobile-nav-bar'>
+        <section className='mobile-nav-bar-menu' onClick={()=>setOpenMobileDrawer(true)}>
+            <RiMenu2Fill className='mobile-nav-bar-menu-icon'/>
+        </section>
+        <Logo />
+        <CartBasket setShowCart={setShowCart}/>
+    </nav>
+}
+
+function CartBasket({setShowCart}:HeaderComponentProps){
+    const {cartData} = useGlobalContext()
+
+    return <div className='cart-basket-div' onClick={()=>setShowCart(true)}>
+        <FaShoppingCart className='cart-basket'/>
+        {cartData.cartQuantity > 0 &&  <p className='cart-basktek-quantity'>{cartData.cartQuantity}</p>}
+    </div>
+}
+
+export function MobileNavDrawer({setOpenMobileDrawer}:MobileNavDrawerProps){
+    const location = useLocation()
+    const contentControl = useAnimation()
+    const emptyControl = useAnimation()
+
+    const duration = .35
+
+    const _show = {
+        showContent:{x:[-1000, 0], transition:{duration}},
+        showEmpty:{opacity:1, transition:{duration:.8}}
+    }
+
+    const _leave = {
+        leaveContent:{x:-1000, transition:{duration}},
+        leaveEmpty:{opacity:0, transition:{duration:.35}}
+    }
+
+
+    const closeDrawer = ()=>{
+        contentControl.start(_leave.leaveContent)
+        emptyControl.start(_leave.leaveEmpty)
+        setTimeout(()=>setOpenMobileDrawer(false),500)
+    }
+
+    useLayoutEffect(()=>{
+        contentControl.start(_show.showContent)
+        emptyControl.start(_show.showEmpty)
+    },[])
+
+
+    return <div className='mobile-nav-drawer'>
+
+        <motion.div animate={contentControl} className='mobile-nav-drawer-content'>
+            <Logo />
+            <div className='mobile-nav-drawer-navs'>
+                {Navs.map((nav, index)=> <Link 
+                    key={index}
+                    className={location.pathname === nav.path ? 'link-active' : 'link'} 
+                    to={nav.path}
+                >
+                    {nav.name}                
+                </Link>)}
+            </div>
+        </motion.div>
+
+        <motion.div 
+            animate={emptyControl} 
+            onClick={closeDrawer}
+            className='mobile-nav-drawer-empty'
+        >
+
+        </motion.div>
+        
+    </div>
+}
+
+
+export function Navbar({setShowCart}:Props){
+    const {cartData} = useGlobalContext()
+    const location = useLocation()
+    
+
+    return <nav className="nav">
+       <Logo />
+
+        <section className="nav-content">
+            {Navs.map((nav, index)=> <Link 
+                key={index}
+                className={location.pathname === nav.path ? 'link-active' : 'link'} 
+                to={nav.path}
+            >
+                {nav.name}                
+            </Link>)}
+        </section>
+        
+        <div className='cart-basket-div' onClick={()=>setShowCart(true)}>
+            <FaShoppingCart className='cart-basket'/>
+            {cartData.cartQuantity > 0 &&  <p className='cart-basktek-quantity'>{cartData.cartQuantity}</p>}
+        </div>
+    </nav>
+}
+

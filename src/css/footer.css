@@ -1,0 +1,37 @@
+.footer{
+    background-color: rgb(2, 8, 6);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.footer-text{
+    color: var(--grey3);
+}
+
+
+.footer-logo-wrapper{
+    text-align: center;
+    padding: 0 20px;
+    background: yellow;
+}
+
+.footer-icons{
+    color: var(--grey3);
+}
+
+.footer-icons-wrap{
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-icons-wrap *{
+    margin: 5px;
+}
+
+
+@media screen and (max-width: 700px) {
+    .footer{flex-direction: column-reverse; gap: 3rem;}
+}

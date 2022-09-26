@@ -1,0 +1,23 @@
+.logo{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.leaf{
+    width: 20px;
+    height: 20px;
+}
+
+.logo-text{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+@media screen and (max-width:768px) {
+    .logo{width: 30%;}
+}

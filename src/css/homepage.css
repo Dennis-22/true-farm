@@ -1,0 +1,54 @@
+.homepage{
+}
+
+.hero{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(135deg, rgba(15, 15, 15, 0.719), rgba(15, 15, 15, 0.719)), url(../asserts/background.jpg);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero * {
+    margin-top: 20px;
+}
+
+.hero-text{
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-sub-text{
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sub-hero{
+    text-align: center;
+    margin: 4rem auto;
+}
+
+.sub-hero * {
+    margin-top: 20px;
+}
+
+.shop-btn{
+    margin-top: 2rem;
+    padding: 1.4rem 2rem;
+    background-color: var(--deep-green);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-1);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .hero{text-align: center; padding-left: 20px; padding-right: 20px;}
+}

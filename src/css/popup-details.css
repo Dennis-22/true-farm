@@ -1,0 +1,137 @@
+.popup-details{
+    height: 90vh;
+    width: 100vw;
+    background-color: var(--grey3);
+    position: fixed;
+    bottom: 0;
+    transform: translateY(900px);
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow-y: scroll;
+}
+
+.popup-details-close-sec{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.p-d-close-icon{
+    font-size: 1.5rem;
+    color: rgba(61, 61, 61, 0.719);
+    cursor: pointer;
+}
+
+.p-d-content{
+    display: flex;
+    justify-content: space-between  ;
+}
+
+.p-d-product{
+    width: 47%;
+    text-align: center;
+}
+
+.p-d-p-image{
+    width: 90%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.p-d-p-main-details{
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.p-d-p-m-d-name{
+    color: var(--deep-green);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.p-d-p-m-d-price{
+    background-color: var(--light-green);
+    color: #fff;
+    padding: .2rem .4rem;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-4);
+}
+
+.p-d-b-value{
+    color: var(--faint-text);
+}
+
+.p-d-btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.p-d-b-minus, .p-d-b-plus, .p-d-b-add-btn{
+    font-size: 1rem;
+    padding: .4rem .6rem;
+    width: 30%;
+    border-radius: 4px;
+    /* box-shadow: var(--box-shadow-1); */
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.p-d-b-minus{
+    background-color: var(--red);
+}
+
+.p-d-b-plus{
+    background-color: var(--blue-3); 
+}
+
+.p-d-b-add-btn{
+    width: 70%;
+    background-color: var(--blue);
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow-5);
+}
+
+
+.p-d-benefits{
+    width: 47%;
+}
+
+.p-d-b-name{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.p-d-b-wrapper{
+    margin-top: 20px;
+    padding: 20px;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 4px;
+    /* box-shadow: var(--box-shadow-2); */
+}
+
+.p-d-b-wrapper > p{
+    color: var(--faint-text);
+    line-height: 2;
+}
+
+.p-d-b-name{
+    color: var(--deep-green);
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 768px) {
+   .p-d-content{flex-direction: column;}
+   .p-d-product{width: 100%;}
+   .p-d-benefits{width: 100%; margin-top: 4rem; margin-bottom:2rem}
+}

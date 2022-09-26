@@ -1,0 +1,34 @@
+.about{
+    background-color: var(--grey2);
+    width: 30%;
+    margin: 170px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-4);
+}
+
+.about-logo{
+    width: 100px;
+    height: 100px;
+}
+
+.about-details{
+    margin-top: 20px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+
+.about-details > p{
+    margin: 5px 0;
+}
+
+.about-name{color: var(--faint-text);}
+
+.about-text{}
+
+
+@media screen and (max-width: 600px){
+    .about{width: 50%;}
+}
