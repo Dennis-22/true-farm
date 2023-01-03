@@ -12,7 +12,7 @@ export default function Search({value, handleSearch}:Props){
             className="search-input" 
             value={value} 
             onChange={(e)=>handleSearch(e.target.value)}
-            placeholder="Type a search"
+            placeholder="Search fruit or vegetable"
         />
     </div>
 }

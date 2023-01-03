@@ -70,7 +70,7 @@ export default function Cart({setShowCart}:Props){
 
             <section className='cart-data'>
                 {
-                    cartItems.length === 0 ? <ListEmpty text="Such an empty basket" height={20}/> : 
+                    cartItems.length === 0 ? <ListEmpty text="Basket is currently empty" height={20}/> : 
                     cartItems.map((cart, index)=> <RenderCartItem 
                         key={index}
                         {...cart}

@@ -108,24 +108,3 @@ export default function Store(){
     </> 
 
 }
-
-
-// const [pageNumber, setPageNumber] = useState(1)
-// const itemsPerPage = 5
-// const pagesVisited = pageNumber * itemsPerPage
-// const pageCount = Math.ceil(filteredData.length / itemsPerPage)
-
-{/* <ReactPaginate
-    previousLabel="Prev"
-    nextLabel="Next"
-    pageCount={pageCount}
-    onPageChange={({selected})=> setPageNumber(selected)}
-    containerClassName="pagination-container"
-    pageLinkClassName="paginations-btns"
-    previousLinkClassName="pagination-previous"
-    nextLinkClassName="pagination-next"
-    disabledClassName="pagination-btn-disable"
-    activeClassName="pagination-active"
-/> */}
-
-// filteredData.slice(pagesVisited, pagesVisited + itemsPerPage).map((item, index)=> <DisplayProduct {...item } key={index} openAndClosePopup={openAndClosePopup}/>)

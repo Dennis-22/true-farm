@@ -11,17 +11,17 @@ export default function CheckOut(){
     const width = window.innerWidth 
 
     useEffect(()=>{
-        // clear all the cart items as this page means user successfull made the purchase
+        // clear all the cart items as this page means user successful made the purchase
         clearAllItems()
     },[])
 
     return  <>
         <div className='checkout'>
             <section className="checkout-sec">
-                <h2 className='checkout-title'>Purchase Successfull</h2>
+                <h2 className='checkout-title'>Purchase Successful</h2>
                 <img src={image} className="checkout-img"/>
                 
-                <p className='checkout-text'>You Successfull made a purchase. Thank you for testing this app</p>
+                <p className='checkout-text'>You Successful made a purchase. Thank you for testing this app</p>
                 
             </section>
         </div>

@@ -77,10 +77,11 @@
     padding: .4rem .6rem;
     width: 30%;
     border-radius: 4px;
-    /* box-shadow: var(--box-shadow-1); */
     cursor: pointer;
     color: #fff;
     border-radius: 4px;
+    border: none;
+    outline: none;
 }
 
 .p-d-b-minus{

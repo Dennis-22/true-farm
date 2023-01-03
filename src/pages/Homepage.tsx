@@ -1,5 +1,7 @@
 import {motion} from 'framer-motion'
 import { useNavigate } from "react-router-dom"
+
+
 import '../css/homepage.css'
 
 
@@ -13,7 +15,7 @@ export default function Homepage(){
                 animate={{y:0, opacity:1}} 
                 className="hero-text"
             >
-                True Farm, A chef's friend
+                True Farm, The chef's friend
             </motion.h1>
 
             <p>Get fresh fruits and vegetables right from the garden.</p>

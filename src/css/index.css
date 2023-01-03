@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 :root{
+  --max-width: 1600px;
   --deep-green: rgb(33, 92, 67);
   --deep-green2: rgb(33, 154, 2);
   --light-green: rgb(72, 154, 2);
@@ -35,13 +36,18 @@
 }
 
 body {
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.layout{
+  width: 100%;
+  max-width: var(--max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 .container{
   margin-top: 120px;
