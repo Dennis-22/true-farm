@@ -87,7 +87,6 @@
     align-items: center;
     gap: 10rem;
     background-color: var(--grey);
-    transform: translateX(-1000px);
 }
 
 .mobile-nav-drawer-navs{
@@ -103,7 +102,6 @@
 .mobile-nav-drawer-empty{
     width: 20%;
     background-color: rgba(51, 51, 51, 0.658);
-    opacity: 0;
 }
 
 

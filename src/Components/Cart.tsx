@@ -1,13 +1,11 @@
-import { useLayoutEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {useNavigate} from 'react-router-dom' 
 import { MdClose, MdDelete } from "react-icons/md";
 import '../css/cart.css'
 import ListEmpty from './ListEmpty';
-// import Data from '../context/Data'
-import {formatCurrency} from '../utities/formatCurrency'
+import {formatCurrency} from '../utilities/formatCurrency'
 import { useGlobalContext } from '../context/context'
-import {CartItem} from '../utities/typesConfigs'
+import {CartItem} from '../utilities/typesConfigs'
 import leaf from '../asserts/leaf.svg'
 
 
@@ -25,9 +23,6 @@ export default function Cart({setShowCart}:Props){
     const {data, cartData, clearAllItems} = useGlobalContext()
     const navigate = useNavigate()
     const {cartItems, totalPrice} = cartData
-    const cartControl = useAnimation()
-    const cartContentsControl = useAnimation()
-
 
     const getItemDetails = (id:string):{name:string, image:string}=>{
         let product = data.find(item => item.id === id)
@@ -35,36 +30,20 @@ export default function Cart({setShowCart}:Props){
         return {name:'', image:''}
     }
 
-    const duration = .4
 
-    const show = {
-        cart:{opacity:[0, 1], transition:{duration}},
-        cartContent:{scale:[0, 1], transition:{duration}}
-    }
-
-    const leave = {
-        cart:{opacity:0, transition:{duration}},
-        cartContent:{scale:0, transition:{duration}}
-    }
-
-
-    const scaleOut = ()=>{
-        cartControl.start(leave.cart)
-        cartContentsControl.start(leave.cartContent)
-
-        setTimeout(()=>{
-            setShowCart(false)
-        },500)
-    }
-
-    useLayoutEffect(()=>{
-        cartControl.start(show.cart)
-        cartContentsControl.start(show.cartContent)
-    },[])
-
-    return <motion.div animate={cartControl} className='cart'>
-        <motion.div animate={cartContentsControl} className='cart-contents'>
-            <section className='close-cart' onClick={scaleOut}>
+    return <motion.div 
+        className='cart'
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
+    >
+        <motion.div 
+            className='cart-contents'
+            initial={{y:-100, opacity:0}}
+            animate={{y:0, opacity:1}}
+            exit={{y:-100, opacity:0}}
+        >
+            <section className='close-cart' onClick={()=>setShowCart(() => false)}>
                 <MdClose className='close-icon'/>
             </section>
 

@@ -51,8 +51,9 @@
 }
 
 
-
 .filter-n{background-color: var(--grey);}
+.filter-n:hover{background-color: var(--deep-green); color: #fff}
+
 .filter-active{background-color: var(--deep-green); color: #fff}
 
 .filter-img{
@@ -61,36 +62,7 @@
     margin-right: 5px;
 }
 
-/* .pagination-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    margin: 2rem 0;
-    padding: 10px;
-}
-
-.paginations-btns{
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-
-.pagination-active{
-    color: #fff;
-    background-color: var(--deep-green);
-    border-radius: 3px;
-    margin: 0 5px;
-    padding: 2px;
-}
-
-.pagination-previous,.pagination-next{
-    margin: 0 5px;
-    cursor: pointer;
-} */
-
-
-/* Prodect */
+/* Product */
 .products{
     min-height: 55vh;
     margin-bottom: 60px;
@@ -102,12 +74,12 @@
 
 .product{
     margin: 1.6rem 1rem;
-    padding: 10px;
     border-radius: 10px;
     width: 20%;
-    height: 270px;
     background-color: var(--faint-background-5);
     cursor: pointer;
+    height: fit-content;
+    padding: 10px;
 }
 
 .product:hover{

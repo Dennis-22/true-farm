@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Header, {MobileNavDrawer} from './Header'
 import Cart from './Cart'
-import { JsxProp } from '../utities/typesConfigs'
+import { JsxProp } from '../utilities/typesConfigs'
 
 export default function Layout({children}: JsxProp){
     const [showCart, setShowCart] = useState<boolean>(false)
@@ -15,8 +16,10 @@ export default function Layout({children}: JsxProp){
                 {children}
             </div>
         </div>
-        {showCart && <Cart setShowCart={setShowCart}/>}
-        {openMobileDrawer && <MobileNavDrawer setOpenMobileDrawer={setOpenMobileDrawer}/>}
+        <AnimatePresence>
+            {showCart && <Cart setShowCart={setShowCart}/>}
+            {openMobileDrawer && <MobileNavDrawer setOpenMobileDrawer={setOpenMobileDrawer}/>}
+        </AnimatePresence>
     </>
 
 }

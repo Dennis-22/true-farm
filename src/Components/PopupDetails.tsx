@@ -1,12 +1,12 @@
-import { useLayoutEffect, useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { RiCloseCircleFill } from "react-icons/ri";
 import '../css/popup-details.css'
 import {Loading, Error} from './Status'
-import requestMaker from '../utities/requiestMaker'
+import requestMaker from '../utilities/requiestMaker'
 import { useGlobalContext } from '../context/context'
-import { formatCurrency } from "../utities/formatCurrency";
-import { benefitsRoute } from '../utities/apiRoutes'
+import { formatCurrency } from "../utilities/formatCurrency";
+import { benefitsRoute } from '../utilities/apiRoutes'
 import leaf from '../asserts/leaf.svg'
 
 interface Props{
@@ -32,7 +32,6 @@ export default function PopupDetails({openAndClosePopup}:Props){
     const initialPrice = getInitialPrice(productId || '') //when the dec btn is pressed til the value becomes 0, the price also shows 0. use this whn price i 0 
     const isItemInCart:boolean = product?.value ? product.value > 0 : false || false
 
-    const productControl = useAnimation()
 
     //return the price in the cart or the original product price
     const getProductPrice = ():number =>{
@@ -50,7 +49,7 @@ export default function PopupDetails({openAndClosePopup}:Props){
     
 
     const fetchHealthBenefit = async()=>{
-        // first check local data to see if producct benefit is present
+        // first check local data to see if product benefit is present
         let localData = healthBenefits.find(ben => ben.productId === productId)
         if(localData){
             return setProcess({...process, benefits:localData.benefits})
@@ -60,53 +59,31 @@ export default function PopupDetails({openAndClosePopup}:Props){
         let url = `${benefitsRoute}/${productId}`
         let response = await requestMaker(url) as any
         let {success, data} = response
-        // console.log(data[0].benefits)
-        // console.log(data)
         if(success){
             setProcess({loading:false, error:false, benefits:data[0].benefits})
-            // add the data to local data so it does not fecth from server again when user tries to access it
+            // add the data to local data so it does not fetch from server again when user tries to access it
             setHealthBenefits([...healthBenefits, data[0]])
         }else{
             setProcess({loading:false, error:true, benefits:[]})
         }
     }
 
-    // Framer Motions Functions
-    const duration = .4
 
-    const show = {
-        product:{y:0, transition:{duration}},
-    }
-
-    const leave = {
-        product:{y:900, transition:{duration}},
-    }
-
-    const slideDown = ()=>{
-        productControl.start(leave.product)
-        // cartContentsControl.start(leave.cartContent)
-
-        setTimeout(()=>{
-            openAndClosePopup('close', null)
-        },500)
-    }
-    
     useEffect(()=>{
         fetchHealthBenefit()
     },[])
 
-    useLayoutEffect(()=>{
-        productControl.start(show.product)
-        // cartContentsControl.start(show.cartContent)
-    },[])
-
-    // End of Framer Motion
 
     if(!productId) return null
 
-    return <motion.div animate={productControl} className='popup-details'>
+    return <motion.div
+        className='popup-details'
+        initial={{opacity:0, y:200}}
+        animate={{opacity:1, y:0}}
+        exit={{y:-200, opacity:0}}
+    >
         <section className="popup-details-close-sec">
-            <RiCloseCircleFill className='p-d-close-icon' onClick={slideDown}/>
+            <RiCloseCircleFill className='p-d-close-icon' onClick={()=>openAndClosePopup('close', null)}/>
         </section>
 
         <div className="p-d-content">

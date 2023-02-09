@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState, useCallback } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import '../css/store.css'
 import DisplayProduct from "../Components/store/DisplayProduct"
 import ListEmpty from '../Components/ListEmpty'
@@ -8,10 +9,10 @@ import Layout from "../Components/Layout"
 import { Loading, Error } from '../Components/Status'
 import Footer from '../Components/Footer'
 import PopupDetails from '../Components/PopupDetails'
-import requestMaker from '../utities/requiestMaker'
-import { productsRoute } from '../utities/apiRoutes'
+import requestMaker from '../utilities/requiestMaker'
+import { productsRoute } from '../utilities/apiRoutes'
 import { useGlobalContext } from '../context/context'
-import { FilterCategories, ProductProp } from '../utities/typesConfigs'
+import { FilterCategories, ProductProp } from '../utilities/typesConfigs'
 
 
 export default function Store(){
@@ -22,7 +23,7 @@ export default function Store(){
     const [filter, setFilter] = useState<FilterCategories>('all')
     const [showDetails, setShowDetails] = useState(false)
 
-    const fetchProducts = async()=>{
+    const fetchProducts = useCallback(async()=>{
         if(data.length > 0) return null //stop from fetching from server
         setProcess({loading:true, error:false})
         let response = await requestMaker(productsRoute)
@@ -34,7 +35,7 @@ export default function Store(){
         }else{
             setProcess({loading:false, error:true})
         }
-    }
+    },[process])
 
 
     const filterData = (category: FilterCategories):void=>{
@@ -97,12 +98,12 @@ export default function Store(){
                         </>
                     }        
                 </div>
-                
-
             </>
         </Layout>
         
-        {showDetails && <PopupDetails openAndClosePopup={openAndClosePopup}/>}
+        <AnimatePresence>
+            {showDetails && <PopupDetails openAndClosePopup={openAndClosePopup}/>}
+        </AnimatePresence>
 
         <Footer />
     </> 

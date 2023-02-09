@@ -1,5 +1,5 @@
 import {createContext, useContext, useState} from 'react'
-import {JsxProp, ProductData, ProductProp, CartItem, HealthBenefit} from '../utities/typesConfigs'
+import {JsxProp, ProductData, ProductProp, CartItem, HealthBenefit} from '../utilities/typesConfigs'
 
 type CartData = {
     cartItems:CartItem[],

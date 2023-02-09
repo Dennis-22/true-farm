@@ -1,6 +1,6 @@
-import {useState, useEffect, useLayoutEffect} from 'react'
+import {useState, useEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaShoppingCart } from "react-icons/fa";
 import { RiMenu2Fill } from "react-icons/ri";
 import '../css/header.css'
@@ -74,7 +74,7 @@ function MobileNav({setShowCart, setOpenMobileDrawer}:Props){
 function CartBasket({setShowCart}:HeaderComponentProps){
     const {cartData} = useGlobalContext()
 
-    return <div className='cart-basket-div' onClick={()=>setShowCart(true)}>
+    return <div className='cart-basket-div' onClick={()=>setShowCart(()=> true)}>
         <FaShoppingCart className='cart-basket'/>
         {cartData.cartQuantity > 0 &&  <p className='cart-basktek-quantity'>{cartData.cartQuantity}</p>}
     </div>
@@ -82,37 +82,15 @@ function CartBasket({setShowCart}:HeaderComponentProps){
 
 export function MobileNavDrawer({setOpenMobileDrawer}:MobileNavDrawerProps){
     const location = useLocation()
-    const contentControl = useAnimation()
-    const emptyControl = useAnimation()
-
-    const duration = .35
-
-    const _show = {
-        showContent:{x:[-1000, 0], transition:{duration}},
-        showEmpty:{opacity:1, transition:{duration:.8}}
-    }
-
-    const _leave = {
-        leaveContent:{x:-1000, transition:{duration}},
-        leaveEmpty:{opacity:0, transition:{duration:.35}}
-    }
-
-
-    const closeDrawer = ()=>{
-        contentControl.start(_leave.leaveContent)
-        emptyControl.start(_leave.leaveEmpty)
-        setTimeout(()=>setOpenMobileDrawer(false),500)
-    }
-
-    useLayoutEffect(()=>{
-        contentControl.start(_show.showContent)
-        emptyControl.start(_show.showEmpty)
-    },[])
-
-
+ 
     return <div className='mobile-nav-drawer'>
 
-        <motion.div animate={contentControl} className='mobile-nav-drawer-content'>
+        <motion.div 
+            className='mobile-nav-drawer-content'
+            initial={{x:-100, opacity:0}}
+            animate={{x:0, opacity:1}}
+            exit={{x:-500, opacity:0}}
+        >
             <Logo />
             <div className='mobile-nav-drawer-navs'>
                 {Navs.map((nav, index)=> <Link 
@@ -125,9 +103,11 @@ export function MobileNavDrawer({setOpenMobileDrawer}:MobileNavDrawerProps){
             </div>
         </motion.div>
 
-        <motion.div 
-            animate={emptyControl} 
-            onClick={closeDrawer}
+        <motion.div
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
+            onClick={()=>setOpenMobileDrawer(()=>false)}
             className='mobile-nav-drawer-empty'
         >
 

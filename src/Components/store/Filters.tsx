@@ -1,7 +1,7 @@
 import vegetablesCat from '../../asserts/vegetables.svg'
 import allCat from '../../asserts/all.svg'
 import fruitsCat from '../../asserts/fruits.svg'
-import {FilterCategories} from '../../utities/typesConfigs'
+import {FilterCategories} from '../../utilities/typesConfigs'
 
 
 interface Props{

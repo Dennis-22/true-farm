@@ -1,6 +1,6 @@
 import { BsFillCartPlusFill } from "react-icons/bs";
-import {ProductProp} from '../../utities/typesConfigs'
-import {formatCurrency} from '../../utities/formatCurrency'
+import {ProductProp} from '../../utilities/typesConfigs'
+import {formatCurrency} from '../../utilities/formatCurrency'
 import { useGlobalContext } from '../../context/context'
 import leaf from '../../asserts/leaf.svg'
 

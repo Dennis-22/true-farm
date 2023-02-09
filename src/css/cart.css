@@ -13,6 +13,7 @@
 .cart-contents{
     background-color: var(--faint-background-2);
     width: 80%;
+    max-width: 750px;
     height: 85%;
     border-radius: 5px;
     position: relative;
