@@ -179,6 +179,7 @@
 
 
 @media screen and (max-width: 768px) {
+    .cart-contents{width:95%}
     .c-cart-item{width: auto; margin: 13px 10px;}
     .c-cart-buttons{width: 65%;}
     .cart-buttons{flex-direction: column;}
